@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://5lpc1rurxqcs"]
+
+[ext_resource type="Script" path="res://scripts/move_transform.gd" id="1_6b4yb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4fk5"]
+albedo_color = Color(0, 0.603922, 0.372549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lp2gy"]
+material = SubResource("StandardMaterial3D_s4fk5")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwl81"]
+
+[node name="Box" type="StaticBody3D"]
+script = ExtResource("1_6b4yb")
+move_speed = 5.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_lp2gy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_rwl81")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
