@@ -14,7 +14,7 @@ var z_cord: float = 0
 
 
 func _ready():
-	set_process_input(true)
+	#set_process_input(true)
 
 func _on_input_event(camera, event, _pos, _normal, _shape_idx):
 	if event is InputEventMouseButton:
